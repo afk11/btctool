@@ -1,0 +1,4 @@
+#!/usr/bin/env php
+<?php
+(@include_once __DIR__ . '/../vendor/autoload.php') || @include_once __DIR__ . '/../../../autoload.php';
+(new \Afk11\Btctool\Console\Application())->run();

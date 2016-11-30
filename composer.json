@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Afk11\\Btctool\\": "src/"
+    }
+  },
+  "require": {
+    "symfony/console": "^3.2.0",
+    "bitwasp/bitcoin": "v0.0.31"
+  }
+}
