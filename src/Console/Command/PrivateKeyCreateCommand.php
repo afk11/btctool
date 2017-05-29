@@ -36,7 +36,7 @@ class PrivateKeyCreateCommand extends AbstractCommand
         $rows[] = ['wif' , $privateKey->toWif($network)];
         $rows[] = ['public key' , $publicKey->getHex()];
         $rows[] = ['address' , $address->getAddress($network)];
-        
+
         $table = new Table($output);
         $table->setRows($rows);
         $table->render();

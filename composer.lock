@@ -4,26 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aa5753f44d001c709072d4d3efd5315a",
-    "content-hash": "9aeaddf16944ecb3c9e4cb2de91425e4",
+    "hash": "737ee972971969710cf40e688e064a0a",
+    "content-hash": "48c36a5733f731c772b73b9b196343a7",
     "packages": [
         {
             "name": "bitwasp/bitcoin",
-            "version": "v0.0.31",
+            "version": "v0.0.31.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bit-Wasp/bitcoin-php.git",
-                "reference": "cf6f67f775259e2fc169405c5bf6e97dfb82531f"
+                "reference": "3b6e29dcaa0e15df590a7efcfa8d9b9864fa3101"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bit-Wasp/bitcoin-php/zipball/cf6f67f775259e2fc169405c5bf6e97dfb82531f",
-                "reference": "cf6f67f775259e2fc169405c5bf6e97dfb82531f",
+                "url": "https://api.github.com/repos/Bit-Wasp/bitcoin-php/zipball/3b6e29dcaa0e15df590a7efcfa8d9b9864fa3101",
+                "reference": "3b6e29dcaa0e15df590a7efcfa8d9b9864fa3101",
                 "shasum": ""
             },
             "require": {
                 "bitwasp/buffertools": "^0.3.0",
-                "bitwasp/secp256k1-php": "^0.0.7",
+                "bitwasp/secp256k1-php": "^0.0.9",
                 "composer/semver": "^1.4.0",
                 "ext-gmp": "*",
                 "ext-openssl": "*",
@@ -33,7 +33,7 @@
                 "php": ">=5.6",
                 "pleonasm/merkle-tree": "1.0.0",
                 "rgooding/protobuf-php": "v0.0.1",
-                "symfony/http-foundation": "^2|^3"
+                "symfony/http-foundation": "^2.7|^3.0"
             },
             "require-dev": {
                 "ext-json": "*",
@@ -62,7 +62,7 @@
             ],
             "description": "PHP Bitcoin library with functions for transactions, signatures, serialization, Random/Deterministic ECDSA keys, blocks, RPC bindings",
             "homepage": "https://github.com/bit-wasp/bitcoin-php",
-            "time": "2016-11-25 12:16:16"
+            "time": "2016-12-04 22:21:24"
         },
         {
             "name": "bitwasp/buffertools",
@@ -111,16 +111,16 @@
         },
         {
             "name": "bitwasp/secp256k1-php",
-            "version": "v0.0.7",
+            "version": "v0.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bit-Wasp/secp256k1-php.git",
-                "reference": "e3992b72c1c3882008af6b69a9169b4246a7483d"
+                "reference": "8a6aad914f7dd43e6754b2766fa4f80d7538fbd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bit-Wasp/secp256k1-php/zipball/e3992b72c1c3882008af6b69a9169b4246a7483d",
-                "reference": "e3992b72c1c3882008af6b69a9169b4246a7483d",
+                "url": "https://api.github.com/repos/Bit-Wasp/secp256k1-php/zipball/8a6aad914f7dd43e6754b2766fa4f80d7538fbd2",
+                "reference": "8a6aad914f7dd43e6754b2766fa4f80d7538fbd2",
                 "shasum": ""
             },
             "require-dev": {
@@ -154,7 +154,7 @@
                 "php",
                 "secp256k1"
             ],
-            "time": "2016-03-04 17:43:16"
+            "time": "2016-11-28 20:25:43"
         },
         {
             "name": "composer/semver",
