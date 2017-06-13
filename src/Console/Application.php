@@ -4,6 +4,7 @@ namespace Afk11\Btctool\Console;
 
 use Afk11\Btctool\Console\Command\AddressDecodeCommand;
 use Afk11\Btctool\Console\Command\Base58Command;
+use Afk11\Btctool\Console\Command\BlockDecodeCommand;
 use Afk11\Btctool\Console\Command\FeeRateKBCommand;
 use Afk11\Btctool\Console\Command\PrivateKeyCreateCommand;
 use Afk11\Btctool\Console\Command\PrivateKeyDecodeCommand;
@@ -18,6 +19,7 @@ class Application extends ConsoleApplication
 
         $commands[] = new AddressDecodeCommand();
         $commands[] = new ScriptDecodeCommand();
+        $commands[] = new BlockDecodeCommand();
         $commands[] = new Base58Command();
         $commands[] = new FeeRateKBCommand();
         $commands[] = new PrivateKeyCreateCommand();
