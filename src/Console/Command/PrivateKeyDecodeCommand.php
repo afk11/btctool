@@ -25,7 +25,6 @@ class PrivateKeyDecodeCommand extends AbstractCommand
             ->addArgument('privkey', null, InputArgument::REQUIRED)
             ->addOption('network', null, InputOption::VALUE_REQUIRED, 'A supported network', 'bitcoin')
             ->addOption('testnet', 't', InputOption::VALUE_NONE, 'Use testnet')
-            ->addOption('compressed', 'c', InputOption::VALUE_NONE, 'Use compressed');
         ;
     }
 
@@ -33,23 +32,16 @@ class PrivateKeyDecodeCommand extends AbstractCommand
     {
         $networkName = $input->getOption('network');
         $testnet = $input->getOption('testnet');
-        $compressed = $input->getOption('compressed');
 
         $network = $this->getNetwork($networkName, $testnet);
-        $inner = Base58::decode("KwDiBf89QgGbjEhKnhXJuH7LrciVrZi3qYjgd9M7rFU73sVHnoWn");
 
-
-        $privateKey = PrivateKeyFactory::fromHex("0000000000000000000000000000000000000000000000000000000000000001", true);//fromWif($input->getArgument('privkey'), null, $network);
-        echo $privateKey->getHex().PHP_EOL;
-        echo $privateKey->getInt().PHP_EOL;
-        echo Bitcoin::getMath()->cmp(Bitcoin::getGenerator()->getOrder(), gmp_init($privateKey->getInt(), 10));
-        echo Base58::encodeCheck(Buffer::hex('0000000000000000000000000000000000000000000000000000000000000001'));
+        $privateKey = PrivateKeyFactory::fromWif($input->getArgument('privkey'), null, $network);
         $publicKey = $privateKey->getPublicKey();
         $address = $publicKey->getAddress();
 
         $rows = [];
         $rows[] = ['wif' , $input->getArgument('privkey')];
-        $rows[] = ['wif' , $privateKey->toWif(NetworkFactory::bitcoinTestnet())];
+        $rows[] = ['hex' , $privateKey->getHex()];
         $rows[] = ['public key' , $publicKey->getHex()];
         $rows[] = ['public key hash' , $publicKey->getPubKeyHash()->getHex()];
         $rows[] = ['address' , $address->getAddress(NetworkFactory::bitcoinTestnet())];
