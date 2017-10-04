@@ -3,31 +3,35 @@
 namespace Afk11\Btctool\Console\Command;
 
 
-use BitWasp\Bitcoin\Base58;
 use BitWasp\Buffertools\Buffer;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Base58Command extends AbstractCommand
+class HexCommand extends AbstractCommand
 {
     protected function configure()
     {
         $this
-            ->setName('base58')
-            ->addArgument('base58', null, InputOption::VALUE_NONE, 'decode?')
+            ->setName('hex')
+            ->addArgument('hex', InputArgument::REQUIRED, 'text to encode/decode')
             ->addOption('decode', null, InputOption::VALUE_NONE, 'decode?')
         ;
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $base58 = $input->getArgument('base58');
+        $hex = $input->getArgument('hex');
         $decode = $input->getOption('decode');
         if ($decode) {
-            echo Base58::decode($base58)->getHex() . PHP_EOL;
+            echo Buffer::hex($hex)->getBinary() . PHP_EOL;
         } else {
-            echo Base58::encode(Buffer::hex($base58)) . PHP_EOL;
+            echo (new Buffer($hex))->getHex() . PHP_EOL;
         }
     }
 }
